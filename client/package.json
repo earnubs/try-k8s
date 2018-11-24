@@ -1,0 +1,11 @@
+{
+  "name": "try-spa",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode=production"
+  },
+  "devDependencies": {
+    "tools": "^1.0.0"
+  }
+}

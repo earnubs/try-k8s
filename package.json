@@ -1,0 +1,12 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "start:dev": "node ./server/index.js"
+  },
+  "workspaces": [
+    "client",
+    "server",
+    "tools"
+  ]
+}
