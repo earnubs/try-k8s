@@ -5,6 +5,7 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 
 const webpackConfig = require('../tools/webpack.config.js');
+const manifest = require('../client/dist/manifest.json');
 
 const app = express();
 const compiler = webpack(webpackConfig);
@@ -18,7 +19,7 @@ nunjucks.configure('views', {
 });
 
 app.get('*', function(req, res) {
-    res.render('index.html', { title: 'Hey', message: 'Hello there!' });
+    res.render('index.html', { manifest });
 });
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));

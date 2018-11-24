@@ -5,8 +5,9 @@
     <title>SPA</title>
   </head>
   <body>
-    <div>Head</div>
-    <div id="body">Body</div>
-    <div>Foot</div>
+    <div>Head: rendered by server</div>
+    <div id="body">Body: rendered by server but updated on client</div>
+    <div>Foot: rendered by server</div>
+    <script src="{{ manifest['main.js'] }}"></script>
   </body>
 </html>

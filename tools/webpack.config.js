@@ -23,6 +23,9 @@ module.exports = {
     new ManifestPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  resolve: {
+    symlinks: false,
+  },
   module: {
     rules: [
       {
@@ -42,7 +45,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            rootMode: "upward"
           }
         }
       }
