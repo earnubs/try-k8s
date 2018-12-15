@@ -8,10 +8,11 @@
   },
   "dependencies": {
     "json5": "^2.1.0",
-    "nconf": "^0.10.0",
     "knex": "^0.15.2",
+    "nconf": "^0.10.0",
     "nunjucks": "^3.1.4",
     "passport": "^0.4.0",
-    "passport-github2": "^0.1.11"
+    "passport-github2": "^0.1.11",
+    "pg": "^7.7.1"
   }
 }
