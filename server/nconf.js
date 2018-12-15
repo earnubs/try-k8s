@@ -12,6 +12,7 @@ nconf.argv()
 nconf.required([
   'oauth:github:secret',
   'oauth:github:id',
+  'session:secret',
 ]);
 
 module.exports = nconf;

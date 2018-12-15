@@ -7,6 +7,8 @@
     "tools": "^1.0.0"
   },
   "dependencies": {
+    "connect-redis": "^3.4.0",
+    "express-session": "^1.15.6",
     "json5": "^2.1.0",
     "knex": "^0.15.2",
     "nconf": "^0.10.0",

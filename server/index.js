@@ -22,14 +22,16 @@ nunjucks.configure('views', {
 const compiler = webpack(webpackConfig);
 app.use(middleware(compiler, {
 }));
-
 // css, images, etc will be served from public/ at url /static
 app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/', authRouter);
 
-
-app.use('/auth', authRouter);
 app.get('*', function(req, res) {
-    res.render('index.html', { manifest });
+  console.log(req.user);
+  res.render('index.html', {
+    manifest,
+    user: req.user
+  });
 });
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
