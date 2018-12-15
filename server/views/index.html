@@ -5,9 +5,15 @@
     <title>SPA</title>
   </head>
   <body>
-    <div>Head: rendered by server</div>
+    <div>Head: rendered by server {% if user %} {{ user.displayName }} {% else %}  <a href="/auth/github">Sign in</a> {% endif %}</div>
     <div id="body">Body: rendered by server but updated on client</div>
     <div>Foot: rendered by server</div>
+    <script>
+      __USER__ = {
+        id: "{{ user.id }}",
+        name: "{{ user.displayName }}"
+      };
+    </script>
     <script src="{{ manifest['main.js'] }}"></script>
   </body>
 </html>
