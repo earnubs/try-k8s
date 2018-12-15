@@ -6,5 +6,8 @@
   session: {
     host: 'localhost',
     port: 6379,
+  },
+  db: {
+    connection: 'postgres://localhost:5432/spa_development',
   }
 }

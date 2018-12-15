@@ -10,8 +10,8 @@
     <div>Foot: rendered by server</div>
     <script>
       __USER__ = {
-        id: {{ user.id }},
-        name: {{ user.displayName }}
+        id: "{{ user.id }}",
+        name: "{{ user.displayName }}"
       };
     </script>
     <script src="{{ manifest['main.js'] }}"></script>
