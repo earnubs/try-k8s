@@ -7,6 +7,8 @@
     "tools": "^1.0.0"
   },
   "dependencies": {
+    "json5": "^2.1.0",
+    "nconf": "^0.10.0",
     "nunjucks": "^3.1.4"
   }
 }

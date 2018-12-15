@@ -6,6 +6,9 @@ const path = require('path');
 
 const webpackConfig = require('../tools/webpack.config.js');
 const manifest = require('../client/dist/manifest.json');
+const conf = require('./nconf');
+
+const PORT = conf.get('port');
 
 const app = express();
 const compiler = webpack(webpackConfig);
@@ -22,4 +25,4 @@ app.get('*', function(req, res) {
     res.render('index.html', { manifest });
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
