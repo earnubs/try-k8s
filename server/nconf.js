@@ -9,4 +9,9 @@ nconf.argv()
   })
   .use('file', { format: json5, file: './config/development.json5' });
 
+nconf.required([
+  'oauth:github:secret',
+  'oauth:github:id',
+]);
+
 module.exports = nconf;
