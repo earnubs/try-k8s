@@ -27,7 +27,6 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/', authRouter);
 
 app.get('*', function(req, res) {
-  console.log(req.user);
   res.render('index.html', {
     manifest,
     user: req.user
