@@ -3,6 +3,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>SPA</title>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        font: normal normal 15px/1.666667 Blender Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+        background-color: #333;
+        color: #fff;
+      }
+
+      a {
+        color: #0cf;
+      }
+    </style>
   </head>
   <body>
     <div>Head: rendered by server {% if user %} {{ user.displayName }} {% else %}  <a href="/auth/github">Sign in</a> {% endif %}</div>
@@ -14,6 +32,6 @@
         name: "{{ user.displayName }}"
       };
     </script>
-    <script src="{{ manifest['main.js'] }}"></script>
+    <script src="/{{ manifest['main.js'] }}"></script>
   </body>
 </html>
