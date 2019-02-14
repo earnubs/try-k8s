@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+  labels:
+    app: express
+spec:
+  selector:
+    matchLabels:
+      app: express
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: express
+    spec:
+      containers:
+        - name: express
+          image: earnubs/try:latest
+          #image: react-spa
+          #imagePullPolicy: Never
+          env:
+            - name: OAUTH_GITHUB_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: github
+                  key: oauth
+            - name: OAUTH_GITHUB_ID
+              value: 6fca31798d9837066784
+            - name: SESSION_SECRET
+              value: JNVLpbTJAwaSoBHbZYpPvUdQsKFCuUUeDyYLE
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: regcred

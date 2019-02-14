@@ -12,11 +12,9 @@ const conf = require('./nconf');
 const authRouter = require('./auth');
 
 const PORT = conf.get('port');
-console.log(conf.get('SESSION_SECRET'));
-console.log(PORT);
 
 const app = express();
-nunjucks.configure('views', {
+nunjucks.configure(path.resolve(__dirname, 'views'), {
     autoescape: true,
     express: app
 });
